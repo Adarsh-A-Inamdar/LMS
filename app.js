@@ -16,7 +16,7 @@ const app = express();
  * Make MongoDB connection
  */
 (async () => {
-    await mongoose.connect('mongodb+srv://adarshinamdar2003:6OMmqbdlUrkqmj3T@cluster0.nnxpd5y.mongodb.net/librarymanagement');
+    await mongoose.connect(process.env.MONGO_URL);
 })();
 
 app.engine('hbs', expHbs({defaultLayout: 'layout', extname: '.hbs'}))
